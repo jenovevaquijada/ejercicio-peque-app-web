@@ -1,0 +1,17 @@
+<section class="hero">
+    <h1>{{mayusculas bienvenida}}</h1> <p>Explora nuestros productos seleccionados para ti:</p>
+</section>
+
+<div class="productos-grid">
+    {{#each productos}} <div class="producto-card">
+            <img src="{{this.imagen}}" alt="{{this.nombre}}" width="150">
+            <h3>{{this.nombre}}</h3>
+            <p>Precio: <strong>${{this.precio}}</strong></p>
+            
+            {{#if this.disponible}} <span class="status disponible">En Stock</span>
+            {{else}}
+                <span class="status agotado">Agotado</span>
+            {{/if}}
+        </div>
+    {{/each}}
+</div>
